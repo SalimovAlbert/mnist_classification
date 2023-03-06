@@ -1,0 +1,51 @@
+{
+	"num_classes":  10,
+	"image": {
+		"height": 28,
+		"width": 28
+	},
+	"model": {
+		"num_conv_layers": 3,
+		"filter_scale": 16,
+		"dropout_rate": 0.05,
+		"gaussian_noise": 0.01,
+		"weight_decay": 1e-4,
+		"batch_momentum": 0.9
+	},
+	"training": {
+		"batch_size": 256,
+		"learning_rate": 0.001,
+		"num_epochs": 400,
+		"validation_split": 0.2,
+		"model_checkpoint": "model.h5",
+		"ExponentialDecay": {
+			"decay_steps": 10000,
+			"decay_rate": 0.95
+		},
+		"Adam": {
+			"epsilon": 1e-4,
+			"beta_1": 0.5,
+			"beta_2": 0.99
+		},
+		"augment": {
+			"rotation_range": 10,
+			"width_shift_range":0.1,
+			"height_shift_range": 0.2,
+			"shear_range": 10,
+			"zoom_range": 0.15,
+			"horizontal_flip": false,
+			"fill_mode": "nearest"
+		},
+		"loss": "sparse_categorical_crossentropy",
+		"metrics": "accuracy"
+	},
+	"default_command_args": {
+		"mode": "inference",
+		"dataset_path": ".\\train.csv",
+		"input_path": ".\\input.csv",
+		"output_path": ".\\predictions.csv",
+		"model_path": ".\\model",
+		"ground_truth_path": ".\\ground-truth-test.csv",
+		"predictions_path": ".\\predictions.csv"
+	}
+}
