@@ -15,7 +15,7 @@ def parse_args_mnist(argv: list) -> tuple[str, str, str, str, str]:
             " or ./mnist.py --mode inference --model /path/to/model --input /path/to/input.csv --output /path/to/predictions.csv"
     
     # Default values
-    mode = 	config['default_command_args']['mode'],
+    mode = config['default_command_args']['mode'],
     dataset_path = config['default_command_args']['dataset_path']
     input_path = config['default_command_args']['input_path']
     output_path = config['default_command_args']['output_path']
@@ -88,7 +88,7 @@ def parse_args_evaluate(argv: list) -> tuple[str, str]:
     PARAMETERS_EXAMPLE = "./evaluate.py --ground-truth /path/to/ground-truth-test.csv --predictions /path/to/predictions.csv"
 
     # Default values
-    ground_truth_path = 	config['default_command_args']['ground_truth_path']
+    ground_truth_path = config['default_command_args']['ground_truth_path']
     predictions_path = config['default_command_args']['predictions_path']
 
     try:
